@@ -18,8 +18,16 @@ apply plugin: 'org.springframework.boot'
 
 jar {
 	baseName = 'requalize-web'
-	version = '0.0.1-SNAPSHOT'
+	version = '0.0.2-SNAPSHOT'
 }
+
+task copyRelease(type: Copy) {
+  from jar.archivePath
+  into 'container/app'
+    rename 'requalize-web(.*?).jar','requalize-web.jar' 
+
+}
+
 
 sourceCompatibility = 1.8
 
