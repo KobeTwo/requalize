@@ -23,7 +23,7 @@ jar {
 
 task copyRelease(type: Copy) {
   from jar.archivePath
-  into '../../ci/image-build/appserver'
+  into '../../ci/image-build/app'
     rename 'requalize-web(.*?).jar','requalize-web.jar'
 
 }

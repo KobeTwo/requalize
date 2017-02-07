@@ -1,0 +1,27 @@
+apiVersion: v1
+data:
+  nginx.conf: |
+    events {
+      worker_connections  4096;  ## Default: 1024
+    }
+    http {
+      upstream app {
+          server app:8080;
+      }
+
+      server {
+          listen 80;
+
+          location / {
+              proxy_pass http://app;
+          }
+      }
+    }
+kind: ConfigMap
+metadata:
+  creationTimestamp: 2017-02-07T21:35:24Z
+  name: nginx-config
+  namespace: default
+  resourceVersion: "6114"
+  selfLink: /api/v1/namespaces/default/configmaps/nginx-config
+  uid: 55d8420e-ed7d-11e6-b6af-0800274838cb
