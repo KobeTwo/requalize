@@ -16,7 +16,8 @@ WORKDIR $APP_HOME
 # copy app jar
 ADD requalize-web.jar $APP_HOME/
 
-# copy entrypoint 
+# copy entrypoint
 ADD entrypoint.sh /entrypoint.sh
 
 ENTRYPOINT ["/entrypoint.sh"]
+CMD ["java -jar -Dspring.profiles.active=prod requalize-web.jar"]
