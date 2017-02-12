@@ -48,6 +48,7 @@ dependencies {
 	compile("org.springframework.boot:spring-boot-starter-data-redis")
 	compile('org.springframework.boot:spring-boot-starter-web')
 	compile("com.h2database:h2")
+	compile("org.springframework.boot:spring-boot-starter-thymeleaf")
 	runtime('org.springframework.boot:spring-boot-devtools')
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 }
