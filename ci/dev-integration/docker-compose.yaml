@@ -1,0 +1,28 @@
+version: '2'
+services:
+  redis:
+    image: redis:latest
+    networks:
+     - requalize-net
+    ports:
+      - "172.28.5.254:6379:6379"
+  db:
+    image: percona:latest
+    networks:
+     - requalize-net
+    image: percona:latest
+    environment:
+      - MYSQL_DATABASE=requalize
+      - MYSQL_USER=requalize
+      - MYSQL_PASSWORD=requalize
+      - MYSQL_ROOT_PASSWORD=requalize
+    ports:
+      - "172.28.5.254:3306:3306"
+networks:
+  requalize-net:
+    ipam:
+      driver: default
+      config:
+      - subnet: 172.28.0.0/16
+        ip_range: 172.28.5.0/24
+        gateway: 172.28.5.254
