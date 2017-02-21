@@ -18,7 +18,7 @@ apply plugin: 'org.springframework.boot'
 
 jar {
 	baseName = 'requalize-web'
-	version = '0.0.5-SNAPSHOT'
+	version = '0.0.6-SNAPSHOT'
 }
 
 task copyRelease(type: Copy) {
@@ -59,7 +59,7 @@ dependencies {
 	compile("org.zkoss.zk:zkbind:8.0.2.2")
 	compile("org.zkoss.zk:zkplus:8.0.2.2")
 	compile("org.zkoss.zk:zkspring-core:3.2.0")
-	compile("org.zkoss.zk:zkspring-webflow:3.2.0")
+	//compile("org.zkoss.zk:zkspring-webflow:3.2.0")
 	compile("org.zkoss.zk:zkspring-security:3.2.0")
 	runtime('org.springframework.boot:spring-boot-devtools')
 	testCompile('org.springframework.boot:spring-boot-starter-test')
